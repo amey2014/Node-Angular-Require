@@ -1,0 +1,10 @@
+{
+  "name": "Sample",
+  "version": "0.0.0",
+  "description": "Sample AngularJS app",
+  "dependencies": {
+    "express": "~4.13.3",
+    "require": "~0.5.0"
+  },
+  "author": "Amey P"
+}
