@@ -1,0 +1,48 @@
+<div id="books-screen" class="books-screen">
+	<div class="row">
+		<div class="col-md-12">
+		  <span ng-bind="i18n.get('lblSearch')"></span>: <input ng-model="query">
+		  <span ng-bind="i18n.get('lblSort')"></span>:
+		  <select ng-model="orderProp">
+			<option value="name">Alphabetical</option>
+			<option value="price">Price</option>
+			<option value="price">Date</option>
+		  </select>
+		</div>
+	</div>
+	<div class="row header-row">
+		<div class="col-md-2">
+			Title
+		</div>
+		<div class="col-md-2">
+			Author
+		</div>
+		<div class="col-md-2">
+			Category
+		</div>
+		<div class="col-md-2">
+			Date
+		</div>
+	</div>
+    <div class="row" ng-repeat="book in books | filter:query | orderBy:orderProp">
+		<div class="col-md-2">
+			<a href="/#/books/{{ book.id }}">{{ book.title }}</a>
+		</div>
+		<div class="col-md-2">
+			{{ book.author }}
+		</div>
+		<div class="col-md-2">
+			{{ book.price }}
+		</div>
+		<div class="col-md-2">
+			{{ book.createDate | date: 'medium' }}
+		</div>
+	</div>
+	<div class="row" ng-show="books.length === 0">
+		<div class="col-md-12">
+			No books found!
+		</div>
+	</div>
+  </div>
+</div>
+

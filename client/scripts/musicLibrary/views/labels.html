@@ -1,0 +1,41 @@
+<div id="labels-screen" class="labels-screen container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		  Search: <input ng-model="query">
+		  Sort by:
+		  <select ng-model="orderProp">
+			<option value="name">Alphabetical</option>
+			<option value="price">Price</option>
+		  </select>
+		</div>
+	</div>
+	<div class="row header-row">
+		<div class="col-md-2">
+			Title
+		</div>
+		<div class="col-md-2">
+			Artist
+		</div>
+		<div class="col-md-2">
+			Category
+		</div>
+	</div>
+    <div class="row" ng-repeat="label in labels | filter:query | orderBy:orderProp">
+		<div class="col-md-2">
+			<a href="/#/books/{{ book.id }}">{{ label.title }}</a>
+		</div>
+		<div class="col-md-2">
+			{{ label.artist }}
+		</div>
+		<div class="col-md-2">
+			{{ label.price }}
+		</div>
+	</div>
+	<div class="row" ng-show="labels.length === 0">
+		<div class="col-md-12">
+			No labels found!
+		</div>
+	</div>
+  </div>
+</div>
+
