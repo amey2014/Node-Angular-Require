@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.use('/static', express.static('client'));
-app.use('/i18n.js', express.static('client\\scripts\\i18n.js'));
+app.use('/i18n.js', express.static('i18n.js'));
 
 app.get('/', function (req, res) {
   res.sendFile( __dirname + "/" + "index.html" );
