@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "Sample AngularJS app",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
     "express": "~4.13.3",
+    "jsonwebtoken": "^7.4.0",
+    "mongoose": "^4.9.7",
     "require": "~0.5.0"
   },
   "author": "Amey P"
